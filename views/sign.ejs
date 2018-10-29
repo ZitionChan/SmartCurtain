@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="stylesheets/signin.css">
+
+<form class="form-signin" action="login" method="post">
+    <h1><%= title%> <small>登录</small></h1>
+
+
+    <label for="inputEmail" class="sr-only">用户名</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="用户名" name="user_id" required autofocus>
+    <div>
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" name="user_password" placeholder="密码" required>
+    </div>
+
+    <div class="checkbox">
+        <a href="sign?signup=true">注册</a>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+</form>
