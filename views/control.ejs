@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <%- include('head',{title:title})%>
+
+<link rel="stylesheet" href="stylesheets/jquery.timepicker.min.css">
 <script type="text/javascript" src="javascripts/jquery.timepicker.min.js"></script>
 <script type="text/javascript" src="javascripts/control.js"></script>
 <body>
@@ -18,6 +20,8 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin-bottom: 15px;
+
     }
 
     .panel-container{
@@ -28,6 +32,7 @@
         color:#555;
         font-size:18px;
         font-weight: 400;
+        margin-top: 30px;
     }
 
     .container{
@@ -76,15 +81,17 @@
                         <h2 class="control-title">定时控制</h2>
                         <p class="split-line"></p>
                         <div class="row">
-                        <div class="col-md-6 control-list">
-                            <div>时间</div>
-                            <div class="input-group  col-xs-4">
-                                <input id="timepicker1" type="text" class="form-control input-small" >
+                            <div class="col-md-5 control-list">
+                            <div class="col-xs-4">设置时间</div>
+                            <div class="input-group  col-xs-8">
+                                <input id="timepicker<%= i%>" type="text" class="form-control input-small" >
+
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                             </div>
                         </div>
 
-                        <div class="btn-group col-md-4" role="group" aria-label="...">
+                            <div class="btn-group col-md-4" role="group" aria-label="...">
+
                             <button type="button" class="btn btn-default">
                                 <span>定时开</span>
                             </button>
@@ -142,6 +149,13 @@
     </div>
     <% } %>
 </div>
+
+
+<script>
+    <% for(var i=0;i<data.length;i++){%>
+    $('#timepicker<%= i %>').timepicker();
+    <% } %>
+</script>
 
 
 
