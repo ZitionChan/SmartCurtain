@@ -11,6 +11,7 @@ var pool = require('./dao/connection');
 var indexRouter = require('./routes/index');
 var controlRouter = require('./routes/control');
 var usersRouter = require('./routes/login');
+var opRouter = require('./routes/op');
 
 var app = express();
 
@@ -40,8 +41,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/control',controlRouter);
 app.use('/login', usersRouter);
-
-
+app.use('/op',opRouter);
 
 
 // catch 404 and forward to error handler
